@@ -1,11 +1,9 @@
-const express = require("express")
+const express = require("express");
+const booksRouter = require("./Routes/booksRoute");
 
+const app = express();
 
-const app = express()
+// MiddleWare
+app.use("/api/v1/books", booksRouter);
 
-
-
-const port = 5555;
-app.listen(port, ()=>{
-   console.log(`App is running on ${port}`)
-})
+module.exports= app
